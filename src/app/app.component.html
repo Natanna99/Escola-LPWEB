@@ -1,0 +1,29 @@
+<div class="container">
+  <app-lista-disciplina
+    [disciplina]="disciplina"
+    [editandoDisciplina]="editandoDisciplina"
+    (onexcluir)="excluir($event)"
+    (oneditar)="editar($event)">
+  </app-lista-disciplina>
+
+  <h2>Cadastrar</h2>
+  <form #cadastro="ngForm" (submit)="salvar()">
+    <div>
+      <label for="nome">Nome</label><br>
+      <input type="text" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+    </div>
+    <div>
+      <label for="descricao">Descrição</label><br>
+      <textarea id="descricao" name="descricao" [(ngModel)]="descricao" cols="70" rows="5">
+          </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!cadastro.valid">
+      Salvar
+    </button>
+    <button type="reset" class="btn btn-sm btn-danger" (click)="cancelar()">Cancelar</button>
+  </form>
+</div>
+
+
+
+

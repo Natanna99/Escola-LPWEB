@@ -1,0 +1,26 @@
+<h1>lista disciplina works!</h1>
+<hr>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th>Disciplina</th>
+        <th width="150">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let item of disciplina' [class.table-active]="editandoDisciplina==item">
+        <td>
+          <i *ngIf="editandoDisciplina==item" class="fa fa-pencil-square"></i>
+          {{item.titulo}}
+        </td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)='excluir(item)'><i class="fa fa-trash"></i>
+            Excluir</button>
+          <button class="btn btn-sm btn-primary" (click)='editar(item)'><i class="fa fa-pencil-square"></i>
+            Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  
